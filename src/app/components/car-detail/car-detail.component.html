@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Model Year</th>
+      <th>Daily Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let carDetail of carDetails">
+    <td>{{carDetail.brandName}}</td>
+    <td>{{carDetail.colorName}}</td>
+    <td>{{carDetail.modelYear}</td>
+    <td>{{carDetail.dailyPrice}}</td>
+    <td>{{carDetail.description}}</td>
+    <br>
+      <button (click)="setButtonHomePage(currentCar)"
+      routerLink="/cars"
+      [class]="getButtonHomePageClass(currentCar)"
+      type="button" class="btn btn-primary">Home</button>
+  </tr>
+</table>
+

@@ -1,5 +1,4 @@
-import { CarDetailDto } from './../models/dtos/carDetailDto';
-import { apiUrl } from './../models/constants/urls';
+import { BaseUrl } from './../models/constants/urls';
 import { ListResponseModel } from './../models/responses/listResponseModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -14,10 +13,14 @@ export class CarService {
   constructor(private httpClient:HttpClient) { }
 
   getCars():Observable<ListResponseModel<Car>>{
-    return this.httpClient.get<ListResponseModel<Car>>(apiUrl + "cars/getall")
+    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getall")
   }
 
-  getCarDetails():Observable<ListResponseModel<CarDetailDto>>{
-    return this.httpClient.get<ListResponseModel<CarDetailDto>>(apiUrl + "cars/getcardetails")
+  getCarsByBrand(brandId:number):Observable<ListResponseModel<Car>>{
+    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbybrandid?brandId="+brandId)
+  }
+
+  getCarsByColor(colorId:number):Observable<ListResponseModel<Car>>{
+    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbycolorid?colorId="+colorId)
   }
 }
