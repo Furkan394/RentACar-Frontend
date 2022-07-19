@@ -1,7 +1,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Brand</th>
       <th>Customer</th>
       <th>Company</th>
@@ -9,12 +8,11 @@
       <th>Return Date</th>
     </tr>
   </thead>
-  <tr *ngFor="let rentalDetailDto of rentalDetailDtos">
-    <td>{{rentalDetailDto.rentalId}}</td>
-    <td>{{rentalDetailDto.brandName}}</td>
-    <td>{{rentalDetailDto.customerName}}</td>
-    <td>{{rentalDetailDto.companyName}}</td>
-    <td>{{rentalDetailDto.rentDate}}</td>
-    <td>{{rentalDetailDto.returnDate}}</td>
+  <tr *ngFor="let rentalDetail of rentalDetails">
+    <td>{{rentalDetail.brandName}}</td>
+    <td>{{rentalDetail.customerName}}</td>
+    <td>{{rentalDetail.companyName}}</td>
+    <td>{{rentalDetail.rentDate}}</td>
+    <td>{{rentalDetail.returnDate}}</td>
   </tr>
 </table>
