@@ -1,5 +1,9 @@
 <table class="table">
   <thead>
+    <button (click)="setButtonHomePage(currentCar)"
+      routerLink="/cars"
+      [class]="getButtonHomePageClass(currentCar)"
+      type="button" class="btn btn-primary">Home</button>
     <tr>
       <th>Brand</th>
       <th>Color</th>
@@ -11,14 +15,10 @@
   <tr *ngFor="let carDetail of carDetails">
     <td>{{carDetail.brandName}}</td>
     <td>{{carDetail.colorName}}</td>
-    <td>{{carDetail.modelYear}</td>
-    <td>{{carDetail.dailyPrice}}</td>
+    <td>{{carDetail.modelYear}}</td>
+    <td>{{carDetail.dailyPrice |currency:"€"}}</td>
     <td>{{carDetail.description}}</td>
-    <br>
-      <button (click)="setButtonHomePage(currentCar)"
-      routerLink="/cars"
-      [class]="getButtonHomePageClass(currentCar)"
-      type="button" class="btn btn-primary">Home</button>
+
   </tr>
 </table>
 

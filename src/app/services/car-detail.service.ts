@@ -12,8 +12,13 @@ export class CarDetailService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getCarDetails(carId:number):Observable<ListResponseModel<CarDetail>>{
-    return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl + "cars/getcardetails?carId"+carId)
+  getAllCarDetails():Observable<ListResponseModel<CarDetail>>{
+    return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl + "cars/getcardetails")
   }
+
+  getCarDetailsByCarId(carId:number):Observable<ListResponseModel<CarDetail>>{
+    return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl + "cars/getcardetailsbycarid?carId="+carId)
+  }
+
 
 }

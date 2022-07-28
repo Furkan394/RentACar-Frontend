@@ -18,11 +18,11 @@ export class CarService {
   }
 
   getCarsByBrand(brandId:number):Observable<ListResponseModel<Car>>{
-    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbybrandid?brandId="+brandId)
+    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getcarsbybrandid?brandId="+brandId)
   }
 
   getCarsByColor(colorId:number):Observable<ListResponseModel<Car>>{
-    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbycolorid?colorId="+colorId)
+    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getcarsbycolorid?colorId="+colorId)
   }
 
   add(car:Car): Observable<ResponseModel>{

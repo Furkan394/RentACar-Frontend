@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:"cars", component:CarComponent},
   {path:"cars/brand/:brandId", component:CarComponent},
   {path:"cars/color/:colorId", component:CarComponent},
-  {path:"cars/car-details/:carId", component:CarDetailComponent},
+  {path:"cars/car/:carId", component:CarDetailComponent},
   {path:"cars/add", component:CarAddComponent, canActivate:[LoginGuard]},
   {path:"login", component:LoginComponent},
 ];
