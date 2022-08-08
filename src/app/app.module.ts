@@ -17,6 +17,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CarImageComponent } from './components/car-image/car-image.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { LoginComponent } from './components/login/login.component';
     CarDetailComponent,
     CarAddComponent,
     LoginComponent,
+    RegisterComponent,
+    CarImageComponent,
   ],
   imports: [
     BrowserModule,
